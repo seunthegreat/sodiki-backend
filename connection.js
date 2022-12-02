@@ -1,11 +1,5 @@
 const mongoose = require("mongoose");
-require("dotenv").config();
-const connectionParams = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-
-const uri = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.0gorvb0.mongodb.net/?retryWrites=true&w=majority`;
+const {uri, connectionParams} = require("./constants")
 
 const connection = mongoose
   .connect(uri, connectionParams)
